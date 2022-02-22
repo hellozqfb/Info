@@ -24,7 +24,6 @@ if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Broseraaa)) {
 // initialize curl(what is curl? don't even know but I know it allows me to process data from an api)
 $curl = curl_init();
 
-echo $USERIP;
 $curl = curl_init("http://ip-api.com/json/$USERIP"); //Get the info of the IP using Curl
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
