@@ -15,8 +15,8 @@ if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Broseraaa)) {
 // initialize curl(what is curl? don't even know but I know it allows me to process data from an api)
 $curl = curl_init();
 
-$curl = curl_init("http://ip-api.com/json/$IP");
-//setting this true returns a string instead of outputting as an object(grrr fuck objects grrr)
+echo $USERIP;
+$curl = curl_init("http://ip-api.com/json/$USERIP"); //Get the info of the IP using Curl
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 //actually exectuting it shit cuh
@@ -33,7 +33,6 @@ else {
 }
 //ALWAYS close curl!111
 curl_close($curl);
-
 $COUNTRY = $data->country;
 $REGIONNAME = $data->regionName;
 $CITY = $data->city;
