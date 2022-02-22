@@ -1,6 +1,15 @@
 <?php
 
-$USERIP = $_SERVER["REMOTE_ADDR"];
+if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+    $USERIP=$_SERVER['HTTP_CLIENT_IP'];
+  }
+  elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+    $USERIP=$_SERVER['HTTP_X_FORWARDED_FOR'];
+  }
+  else{
+    $USERIP=$_SERVER['REMOTE_ADDR'];
+  }
+
 $Broseraaa = $_SERVER["HTTP_USER_AGENT"];
 
 //stolen, this prevents bot ips
