@@ -1,10 +1,10 @@
 <?php
 
 $USERIP = $_SERVER["REMOTE_ADDR"];
-$Broser = $_SERVER["HTTP_USER_AGENT"];
+$Broseraaa = $_SERVER["HTTP_USER_AGENT"];
 
 //stolen, this prevents bot ips
-if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Browser)) {
+if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Broseraaa)) {
     exit();
 }
 
@@ -24,6 +24,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 //actually exectuting it shit cuh
 $resp = curl_exec($curl);
+//shit cujj
 
 //catches error and returns it( probably should remove if I actually use logger )
 if($e = curl_error($curl)) {
