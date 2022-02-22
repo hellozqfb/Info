@@ -1,12 +1,20 @@
 <?php
 
+$USERIP = $_SERVER["REMOTE_ADDR"];
+$Broser = $_SERVER["HTTP_USER_AGENT"];
+
+//stolen, this prevents bot ips
+if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Browser)) {
+    exit();
+}
+
 // jhelloo fututure sakml
 
 //Okay, so first time using php.
 
 // initialize curl(what is curl? don't even know but I know it allows me to process data from an api)
 $curl = curl_init();
-$url = "http://ip-api.com/json/";
+$url = "http://ip-api.com/json/$IP";
 
 //gets the url to fetch
 //^ note this can be set during initialization
