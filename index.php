@@ -14,11 +14,8 @@ if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Broseraaa)) {
 
 // initialize curl(what is curl? don't even know but I know it allows me to process data from an api)
 $curl = curl_init();
-$url = "http://ip-api.com/json/$IP";
 
-//gets the url to fetch
-//^ note this can be set during initialization
-curl_setopt($curl, CURLOPT_URL, $url);
+$curl = curl_init("http://ip-api.com/json/$IP");
 //setting this true returns a string instead of outputting as an object(grrr fuck objects grrr)
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
